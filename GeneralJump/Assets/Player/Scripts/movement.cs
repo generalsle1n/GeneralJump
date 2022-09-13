@@ -7,18 +7,32 @@ using static UnityEditor.Searcher.SearcherWindow.Alignment;
 public class movement : MonoBehaviour
 {
     public float speed;
+    public float jumpHeight;
+    public float gravity;
+    CharacterController controller;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        controller = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
+        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
-        gameObject.transform.position = new Vector2(transform.position.x + (horizontal * speed), transform.position.y);
+        if (controller.isGrounded)
+        {
+            move.y = Input.GetAxis("Jump") * jumpHeight;
+        }
+        else
+        {
+            move.y = transform.position.y - gravity;
+        }
+        
+        controller.Move(move);
+
+        //X Y Z
     }
 }
