@@ -222,9 +222,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65bbd8d6a286a204eb1ffd7372842795, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravitySpeed: 0
+  movementSpeed: 0.08
   horizontalAxisName: Horizontal
-  jumpAxisName: Jump
+  jumpAxisName: 0
 --- !u!50 &118419938
 Rigidbody2D:
   serializedVersion: 4
@@ -237,14 +237,14 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 2.5599997
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &118419939
 BoxCollider2D:
@@ -422,26 +422,17 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 0.05
   m_Points:
-  - {x: 5.623308, y: 5.309164}
-  - {x: -8.861209, y: 5.3512607}
-  - {x: -8.873443, y: -3.534511}
-  - {x: -2.3616412, y: -3.5169482}
-  - {x: -1.2549777, y: -3.5067258}
-  - {x: -0.07818172, y: -2.5051568}
-  - {x: 0.67271245, y: -2.4221544}
-  - {x: 0.7055638, y: -3.8738465}
-  - {x: 4.636442, y: -3.7632375}
-  - {x: 4.6741424, y: -3.4226725}
-  - {x: 4.12232, y: -2.5055296}
-  - {x: 4.0924373, y: -1.5324287}
-  - {x: 6.814823, y: -1.5083963}
-  - {x: 6.7994404, y: 1.9997685}
-  - {x: 7.1174583, y: 2.237882}
-  - {x: 7.162588, y: 4.0732384}
-  - {x: 5.622243, y: 4.057879}
-  - {x: 5.6087785, y: 5.3874784}
+  - {x: -8.703336, y: 5.234417}
+  - {x: -8.689968, y: -0.7942185}
+  - {x: -8.681849, y: -4.4557323}
+  - {x: -2.7802513, y: -4.200316}
+  - {x: 0.4746856, y: -2.4290783}
+  - {x: 5.3393497, y: -4.015931}
+  - {x: 8.823147, y: -3.1333232}
+  - {x: 8.868985, y: 5.069181}
+  - {x: -8.704809, y: 5.2377214}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0

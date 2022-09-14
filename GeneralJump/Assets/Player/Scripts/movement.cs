@@ -22,14 +22,10 @@ public class movement : MonoBehaviour
         if(xAxs != 0)
         {
             Vector3 position = gameObject.transform.position;
-
-            position.x = xAxs * movementSpeed;
+            Vector3 position2 = gameObject.transform.position;
+            position.x = position.x + (xAxs * movementSpeed);
 
             gameObject.transform.position = position;
-        }
-
-        
-
-        
+        }        
     }
 }
