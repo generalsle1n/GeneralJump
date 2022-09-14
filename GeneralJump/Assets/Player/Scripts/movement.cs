@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class movement : MonoBehaviour
 {
@@ -21,23 +22,25 @@ public class movement : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void Update()
+    private void FixedUpdate()
     {
         float xAxs = Input.GetAxis(horizontalAxisName);
         float jumpAxs = Input.GetAxis(jumpAxisName);
         Vector3 position = gameObject.transform.position;
 
-        if(xAxs != 0 || jumpAxs != 0)
+        if (xAxs != 0 || jumpAxs != 0)
         {
-            if(inJump == false)
+            position.x = position.x + (xAxs * (movementSpeed/ 10));
+
+            if (!inJump && jumpAxs != 0)
             {
-                position.y = position.y + (jumpAxs);
+                position.y = position.y + (jumpHeight);
             }
 
-            position.x = position.x + (xAxs * movementSpeed);
-            
-            rigidbody.MovePosition(new Vector2(position.x, position.y));
-        }       
+            rigidbody.transform.position = new Vector2(position.x, position.y);
+        }
+
+
     }
 
     void OnCollisionEnter2D(Collision2D theCollision)
